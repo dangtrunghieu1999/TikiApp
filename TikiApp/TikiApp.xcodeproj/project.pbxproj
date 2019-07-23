@@ -20,6 +20,7 @@
 		8483300D22E6ACAA00767522 /* Array+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483300C22E6ACAA00767522 /* Array+Extention.swift */; };
 		8483301022E6ACC200767522 /* UINavigationBar+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483300F22E6ACC200767522 /* UINavigationBar+Extention.swift */; };
 		8483301222E6ACFE00767522 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483301122E6ACFE00767522 /* Reusable.swift */; };
+		8483301722E6AF0500767522 /* ImageItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483301622E6AF0500767522 /* ImageItemCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		8483300C22E6ACAA00767522 /* Array+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extention.swift"; sourceTree = "<group>"; };
 		8483300F22E6ACC200767522 /* UINavigationBar+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extention.swift"; sourceTree = "<group>"; };
 		8483301122E6ACFE00767522 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		8483301622E6AF0500767522 /* ImageItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageItemCollectionViewCell.swift; path = ../../../../../../../../../Documents/ImageItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		B9359C764BFB677C6CBA019B /* Pods-TikiApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikiApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TikiApp/Pods-TikiApp.release.xcconfig"; sourceTree = "<group>"; };
 		D187EFC1593B0011B7DCB5F4 /* Pods-TikiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikiApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TikiApp/Pods-TikiApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,6 +179,7 @@
 		84832FF422E6AB3500767522 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8483301322E6AEC400767522 /* ImageItemCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -258,6 +261,30 @@
 				8483300F22E6ACC200767522 /* UINavigationBar+Extention.swift */,
 			);
 			path = UIkit;
+			sourceTree = "<group>";
+		};
+		8483301322E6AEC400767522 /* ImageItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				8483301422E6AEDB00767522 /* ViewModel */,
+				8483301522E6AEE000767522 /* Cell */,
+			);
+			path = ImageItemCell;
+			sourceTree = "<group>";
+		};
+		8483301422E6AEDB00767522 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8483301522E6AEE000767522 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8483301622E6AF0500767522 /* ImageItemCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		A9425FC9B326272F7F43AFEB /* Pods */ = {
@@ -398,6 +425,7 @@
 				84832FDC22E6A91700767522 /* ProductListViewController.swift in Sources */,
 				84832FDA22E6A91700767522 /* AppDelegate.swift in Sources */,
 				8483300922E6AC4700767522 /* Resource.swift in Sources */,
+				8483301722E6AF0500767522 /* ImageItemCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
