@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ProductDetailViewController.swift
 //  TikiApp
 //
 //  Created by admin on 7/23/19.
@@ -8,65 +8,61 @@
 
 import UIKit
 
-
-class ProductListViewController: BaseUIViewController {
+class ProductDetailViewController: BaseUIViewController {
     
-    // MARK: - UI Element
-    
-    let searchBar = UISearchBar()
+    // MARK: - UI Elements
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        let collectionView = UICollectionView(frame: .zero,collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .white
-        collectionView.register(ImageItemCollectionViewCell.self, forCellWithReuseIdentifier: ImageItemCollectionViewCell.imageItemCellId)
         return collectionView
     }()
+    
     
     // MARK: - View LifeCycle
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        extendedLayoutIncludesOpaqueBars = true
-        navigationController?.navigationBar.setTransparent()
-        navigationController?.navigationBar.barTintColor = Theme.shared.barTintColor
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.setNavigationBar()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
         layoutCollectionView()
-        setupViewNavigationBar()
+        collectionViewRegister()
+        
     }
-    
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.navigationBar.barStyle = .default
+        navigationController?.navigationBar.barTintColor = Theme.shared.barTintColor
     }
     
-    @objc func touchUpInBackButton() {
-        
+    // MARK: - Register CollectionView
+    
+    func collectionViewRegister() {
+        collectionView.register(ProductDetailCollectionViewCell.self, forCellWithReuseIdentifier: ProductDetailCollectionViewCell.productDetailId)
     }
     
     // MARK: - Setup View
     
-    private func setupViewNavigationBar() {
-        searchBar.sizeToFit()
-        navigationItem.titleView = searchBar
-        
-        let backTarget: Target = (target: self, selector: #selector(touchUpInBackButton))
+    @objc func touchBackButton() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func setupNavigationBar() {
+        let backTarget: Target = (target: self, selector: #selector(touchBackButton))
         let backBarButtonModel = BarButtonItemModel(Resource.Image.backButton, backTarget)
         addBarItems(with: [backBarButtonModel], type: .left)
-        
-        let cartTarget: Target = (target: self, selector: #selector(touchUpInBackButton))
-        let cartBarButtonModel = BarButtonItemModel(Resource.Image.cartButton, cartTarget)
-        addBarItems(with: [cartBarButtonModel], type: .right)
     }
+    
     
     // MARK: - Layout
     
-    func layoutCollectionView() {
+    func layoutCollectionView(){
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
             if #available(iOS 11, *) {
@@ -78,32 +74,23 @@ class ProductListViewController: BaseUIViewController {
             make.left.right.bottom.equalToSuperview()
         }
     }
-    
 }
 
 // MARK: - UICollectionViewDelegate
 
-extension ProductListViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let productDetailVC = ProductDetailViewController()
-        navigationController?.pushViewController(productDetailVC, animated: true)
-    }
+extension ProductDetailViewController: UICollectionViewDelegate {
     
 }
+
 // MARK: - UICollectionViewDataSource
 
-extension ProductListViewController: UICollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+extension ProductDetailViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
-    }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageItemCollectionViewCell.imageItemCellId, for: indexPath) as? ImageItemCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductDetailCollectionViewCell.productDetailId , for: indexPath) as? ProductDetailCollectionViewCell else {
             return UICollectionViewCell()
         }
         return cell
@@ -112,12 +99,11 @@ extension ProductListViewController: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegateFlowLayout
 
-extension ProductListViewController: UICollectionViewDelegateFlowLayout {
-    
+extension ProductDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (UIScreen.main.bounds.width - 12)/2
-        let height = width + 80
-        return CGSize(width: width, height: height)
+        let width  = UIScreen.main.bounds.width
+        let heigth = UIScreen.main.bounds.height + 30
+        return CGSize(width: width, height: heigth)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

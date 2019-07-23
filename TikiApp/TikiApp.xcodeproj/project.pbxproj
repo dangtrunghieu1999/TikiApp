@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1A2CE6E4633F3B64E196B735 /* Pods_TikiApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F2D7F192EF2199AB7BE6C6 /* Pods_TikiApp.framework */; };
+		844A98DE22E6B4AF003B4D7D /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A98DD22E6B4AF003B4D7D /* ProductDetailViewController.swift */; };
+		844A98E222E6B4D8003B4D7D /* ProductDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A98E122E6B4D8003B4D7D /* ProductDetailCollectionViewCell.swift */; };
+		844A98E422E6B4E3003B4D7D /* ImageCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A98E322E6B4E3003B4D7D /* ImageCellCollectionViewCell.swift */; };
 		84832FDA22E6A91700767522 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84832FD922E6A91700767522 /* AppDelegate.swift */; };
 		84832FDC22E6A91700767522 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84832FDB22E6A91700767522 /* ProductListViewController.swift */; };
 		84832FE122E6A91800767522 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84832FE022E6A91800767522 /* Assets.xcassets */; };
@@ -25,6 +28,9 @@
 
 /* Begin PBXFileReference section */
 		35F2D7F192EF2199AB7BE6C6 /* Pods_TikiApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TikiApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		844A98DD22E6B4AF003B4D7D /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		844A98E122E6B4D8003B4D7D /* ProductDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		844A98E322E6B4E3003B4D7D /* ImageCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		84832FD622E6A91700767522 /* TikiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84832FD922E6A91700767522 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84832FDB22E6A91700767522 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +68,48 @@
 				35F2D7F192EF2199AB7BE6C6 /* Pods_TikiApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		844A98DA22E6B485003B4D7D /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				844A98DC22E6B499003B4D7D /* View */,
+				844A98DB22E6B493003B4D7D /* ViewController */,
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		844A98DB22E6B493003B4D7D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				844A98DD22E6B4AF003B4D7D /* ProductDetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		844A98DC22E6B499003B4D7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				844A98DF22E6B4BC003B4D7D /* ProductData */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		844A98DF22E6B4BC003B4D7D /* ProductData */ = {
+			isa = PBXGroup;
+			children = (
+				844A98E022E6B4C2003B4D7D /* ImageCell */,
+				844A98E122E6B4D8003B4D7D /* ProductDetailCollectionViewCell.swift */,
+			);
+			path = ProductData;
+			sourceTree = "<group>";
+		};
+		844A98E022E6B4C2003B4D7D /* ImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				844A98E322E6B4E3003B4D7D /* ImageCellCollectionViewCell.swift */,
+			);
+			path = ImageCell;
 			sourceTree = "<group>";
 		};
 		84832FCD22E6A91700767522 = {
@@ -135,6 +183,7 @@
 		84832FEF22E6AAEA00767522 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				844A98DA22E6B485003B4D7D /* ProductDetail */,
 				84832FF022E6AB0700767522 /* ProductList */,
 			);
 			path = Features;
@@ -396,9 +445,12 @@
 				84832FFD22E6ABBE00767522 /* BaseUIViewController.swift in Sources */,
 				8483300622E6AC2E00767522 /* Dimension.swift in Sources */,
 				8483301222E6ACFE00767522 /* Reusable.swift in Sources */,
+				844A98DE22E6B4AF003B4D7D /* ProductDetailViewController.swift in Sources */,
 				8483301022E6ACC200767522 /* UINavigationBar+Extention.swift in Sources */,
 				8483300322E6AC1D00767522 /* Theme.swift in Sources */,
+				844A98E422E6B4E3003B4D7D /* ImageCellCollectionViewCell.swift in Sources */,
 				84832FDC22E6A91700767522 /* ProductListViewController.swift in Sources */,
+				844A98E222E6B4D8003B4D7D /* ProductDetailCollectionViewCell.swift in Sources */,
 				84832FDA22E6A91700767522 /* AppDelegate.swift in Sources */,
 				8483300922E6AC4700767522 /* Resource.swift in Sources */,
 				8483301722E6AF0500767522 /* ImageItemCollectionViewCell.swift in Sources */,
