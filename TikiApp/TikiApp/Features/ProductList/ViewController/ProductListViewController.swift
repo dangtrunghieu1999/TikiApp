@@ -85,8 +85,8 @@ class ProductListViewController: BaseUIViewController {
 
 extension ProductListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //        let productDetailVC = ProductDetailViewController()
-        //        navigationController?.pushViewController(productDetailVC, animated: true)
+        let productDetailVC = ProductDetailViewController()
+        navigationController?.pushViewController(productDetailVC, animated: true)
     }
     
 }

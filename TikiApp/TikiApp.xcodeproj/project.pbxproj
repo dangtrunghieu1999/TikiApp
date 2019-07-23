@@ -21,6 +21,9 @@
 		8483301022E6ACC200767522 /* UINavigationBar+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483300F22E6ACC200767522 /* UINavigationBar+Extention.swift */; };
 		8483301222E6ACFE00767522 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483301122E6ACFE00767522 /* Reusable.swift */; };
 		8483301722E6AF0500767522 /* ImageItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483301622E6AF0500767522 /* ImageItemCollectionViewCell.swift */; };
+		8483301922E6B05A00767522 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483301822E6B05A00767522 /* ProductDetailViewController.swift */; };
+		8483302022E6B0E600767522 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483301F22E6B0E600767522 /* ImageCollectionViewCell.swift */; };
+		8483302522E6B25C00767522 /* ProductDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483302422E6B25C00767522 /* ProductDetailCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		8483300F22E6ACC200767522 /* UINavigationBar+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extention.swift"; sourceTree = "<group>"; };
 		8483301122E6ACFE00767522 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		8483301622E6AF0500767522 /* ImageItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageItemCollectionViewCell.swift; path = ../../../../../../../../../Documents/ImageItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		8483301822E6B05A00767522 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductDetailViewController.swift; path = ../../../../../../../Documents/ProductDetailViewController.swift; sourceTree = "<group>"; };
+		8483301F22E6B0E600767522 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageCollectionViewCell.swift; path = ../../../../../../../../../Documents/ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		8483302422E6B25C00767522 /* ProductDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductDetailCollectionViewCell.swift; path = ../../../../../../../../Documents/ProductDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		B9359C764BFB677C6CBA019B /* Pods-TikiApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikiApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TikiApp/Pods-TikiApp.release.xcconfig"; sourceTree = "<group>"; };
 		D187EFC1593B0011B7DCB5F4 /* Pods-TikiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikiApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TikiApp/Pods-TikiApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,8 +161,8 @@
 		84832FF122E6AB1B00767522 /* ProductDetail */ = {
 			isa = PBXGroup;
 			children = (
-				84832FF722E6AB8000767522 /* ViewController */,
 				84832FF622E6AB7C00767522 /* View */,
+				84832FF722E6AB8000767522 /* ViewController */,
 			);
 			path = ProductDetail;
 			sourceTree = "<group>";
@@ -194,6 +200,7 @@
 		84832FF622E6AB7C00767522 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8483301A22E6B07B00767522 /* DataDetail */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,6 +208,7 @@
 		84832FF722E6AB8000767522 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8483301822E6B05A00767522 /* ProductDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -285,6 +293,23 @@
 				8483301622E6AF0500767522 /* ImageItemCollectionViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		8483301A22E6B07B00767522 /* DataDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8483302422E6B25C00767522 /* ProductDetailCollectionViewCell.swift */,
+				8483301D22E6B0B100767522 /* ImageCell */,
+			);
+			path = DataDetail;
+			sourceTree = "<group>";
+		};
+		8483301D22E6B0B100767522 /* ImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				8483301F22E6B0E600767522 /* ImageCollectionViewCell.swift */,
+			);
+			path = ImageCell;
 			sourceTree = "<group>";
 		};
 		A9425FC9B326272F7F43AFEB /* Pods */ = {
@@ -417,9 +442,12 @@
 			files = (
 				8483300D22E6ACAA00767522 /* Array+Extention.swift in Sources */,
 				84832FFB22E6ABA700767522 /* BarButtonItemModel.swift in Sources */,
+				8483302022E6B0E600767522 /* ImageCollectionViewCell.swift in Sources */,
+				8483302522E6B25C00767522 /* ProductDetailCollectionViewCell.swift in Sources */,
 				84832FFD22E6ABBE00767522 /* BaseUIViewController.swift in Sources */,
 				8483300622E6AC2E00767522 /* Dimension.swift in Sources */,
 				8483301222E6ACFE00767522 /* Reusable.swift in Sources */,
+				8483301922E6B05A00767522 /* ProductDetailViewController.swift in Sources */,
 				8483301022E6ACC200767522 /* UINavigationBar+Extention.swift in Sources */,
 				8483300322E6AC1D00767522 /* Theme.swift in Sources */,
 				84832FDC22E6A91700767522 /* ProductListViewController.swift in Sources */,
