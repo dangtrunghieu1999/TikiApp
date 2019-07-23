@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProductDetailCollectionViewCell: UICollectionViewCell {
+class ProductDataCollectionViewCell: UICollectionViewCell {
     
     public static let productDetailId = "ProductDetailCollectionViewCell"
     
@@ -215,7 +215,7 @@ class ProductDetailCollectionViewCell: UICollectionViewCell {
 
 // MARK: - UICollectionViewDataSource
 
-extension ProductDetailCollectionViewCell: UICollectionViewDataSource {
+extension ProductDataCollectionViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
@@ -230,7 +230,7 @@ extension ProductDetailCollectionViewCell: UICollectionViewDataSource {
 }
 // MARK: - UICollectionViewDelegate
 
-extension ProductDetailCollectionViewCell: UICollectionViewDelegate {
+extension ProductDataCollectionViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("touch")
     }
@@ -238,7 +238,7 @@ extension ProductDetailCollectionViewCell: UICollectionViewDelegate {
 
 // MARK: - UICollectionViewDelegateFlowLayout
 
-extension ProductDetailCollectionViewCell: UICollectionViewDelegateFlowLayout {
+extension ProductDataCollectionViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)

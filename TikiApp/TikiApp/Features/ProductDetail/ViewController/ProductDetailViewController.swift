@@ -44,7 +44,7 @@ class ProductDetailViewController: BaseUIViewController {
     // MARK: - Register CollectionView
     
     func collectionViewRegister() {
-        collectionView.register(ProductDetailCollectionViewCell.self, forCellWithReuseIdentifier: ProductDetailCollectionViewCell.productDetailId)
+        collectionView.register(ProductDataCollectionViewCell.self, forCellWithReuseIdentifier: ProductDataCollectionViewCell.productDetailId)
     }
     
     // MARK: - Setup View
@@ -90,7 +90,7 @@ extension ProductDetailViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductDetailCollectionViewCell.productDetailId , for: indexPath) as? ProductDetailCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductDataCollectionViewCell.productDetailId , for: indexPath) as? ProductDataCollectionViewCell else {
             return UICollectionViewCell()
         }
         return cell
