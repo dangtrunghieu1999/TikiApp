@@ -203,9 +203,9 @@ class ProductDataCollectionViewCell: UICollectionViewCell {
     func layoutDescriptionLabel() {
         containerView.addSubview(descriptionLabel)
         descriptionLabel.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(Dimension.shared.normalVerticalMargin)
-            make.left.equalToSuperview().offset(Dimension.shared.normalHorizontalMargin)
-            make.right.equalToSuperview().offset(-Dimension.shared.normalHorizontalMargin)
+            make.top.equalToSuperview().offset(Dimension.shared.largeVerticalMargin)
+            make.left.equalToSuperview().offset(Dimension.shared.largeHorizontalMargin)
+            make.right.equalToSuperview().offset(-Dimension.shared.largeHorizontalMargin)
             
         }
     }

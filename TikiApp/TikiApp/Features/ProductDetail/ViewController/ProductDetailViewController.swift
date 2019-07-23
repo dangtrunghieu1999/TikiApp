@@ -10,6 +10,35 @@ import UIKit
 
 class ProductDetailViewController: BaseUIViewController {
     
+    // MARK: - SectionType
+    
+    fileprivate enum SectionType: Int {
+        case infomation   = 0
+        case benefits     = 1
+        case preferential = 2
+        case detail       = 3
+        case description  = 4
+        
+        static func numberSection() -> Int {
+            return 3
+        }
+        
+        init(indexPath: IndexPath){
+            switch indexPath.section {
+            case 0:
+                self = .infomation
+            case 1:
+                self = .benefits
+            case 2:
+                self = .preferential
+            case 3:
+                self = .detail
+            default:
+                self = .description
+            }
+        }
+    }
+    
     // MARK: - UI Elements
     
     private lazy var collectionView: UICollectionView = {
@@ -17,7 +46,7 @@ class ProductDetailViewController: BaseUIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .clear
         return collectionView
     }()
     
@@ -31,7 +60,7 @@ class ProductDetailViewController: BaseUIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBar()
+        
         layoutCollectionView()
         collectionViewRegister()
         
@@ -45,20 +74,9 @@ class ProductDetailViewController: BaseUIViewController {
     
     func collectionViewRegister() {
         collectionView.register(ProductDataCollectionViewCell.self, forCellWithReuseIdentifier: ProductDataCollectionViewCell.productDetailId)
+        collectionView.register(BenefitsCollectionViewCell.self, forCellWithReuseIdentifier: BenefitsCollectionViewCell.benefitCellId)
+        collectionView.register(PreferentialCollectionViewCell.self, forCellWithReuseIdentifier: PreferentialCollectionViewCell.preferentalCellId)
     }
-    
-    // MARK: - Setup View
-    
-    @objc func touchBackButton() {
-        navigationController?.popViewController(animated: true)
-    }
-    
-    func setupNavigationBar() {
-        let backTarget: Target = (target: self, selector: #selector(touchBackButton))
-        let backBarButtonModel = BarButtonItemModel(Resource.Image.backButton, backTarget)
-        addBarItems(with: [backBarButtonModel], type: .left)
-    }
-    
     
     // MARK: - Layout
     
@@ -76,24 +94,31 @@ class ProductDetailViewController: BaseUIViewController {
     }
 }
 
-// MARK: - UICollectionViewDelegate
-
-extension ProductDetailViewController: UICollectionViewDelegate {
-    
-}
-
 // MARK: - UICollectionViewDataSource
 
 extension ProductDetailViewController: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return SectionType.numberSection()
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductDataCollectionViewCell.productDetailId , for: indexPath) as? ProductDataCollectionViewCell else {
-            return UICollectionViewCell()
+        
+        switch SectionType.init(indexPath: indexPath) {
+        case .infomation:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductDataCollectionViewCell.productDetailId , for: indexPath) as! ProductDataCollectionViewCell
+            return cell
+            
+        case .benefits:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BenefitsCollectionViewCell.benefitCellId, for: indexPath) as! BenefitsCollectionViewCell
+            return cell
+        default:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PreferentialCollectionViewCell.preferentalCellId, for: indexPath) as! PreferentialCollectionViewCell
+            return cell
         }
-        return cell
     }
 }
 
@@ -101,13 +126,23 @@ extension ProductDetailViewController: UICollectionViewDataSource {
 
 extension ProductDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         let width  = UIScreen.main.bounds.width
-        let heigth = UIScreen.main.bounds.height + 30
-        return CGSize(width: width, height: heigth)
+        let heigth = UIScreen.main.bounds.height - 50
+        
+        switch SectionType.init(indexPath: indexPath) {
+        case .infomation:
+            return CGSize(width: width, height: heigth)
+        case .benefits:
+            return CGSize(width: width, height: 150)
+        default:
+            return CGSize(width: width, height: 150)
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

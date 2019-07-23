@@ -37,4 +37,8 @@ public final class Theme {
     }
     
     
+    var lineViewColor: UIColor {
+        return UIColor(red: 238/255.0, green: 238/255.0, blue: 238/255.0, alpha: 100)
+    }
+    
 }

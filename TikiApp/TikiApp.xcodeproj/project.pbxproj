@@ -11,6 +11,8 @@
 		844A98DE22E6B4AF003B4D7D /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A98DD22E6B4AF003B4D7D /* ProductDetailViewController.swift */; };
 		844A98E222E6B4D8003B4D7D /* ProductDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A98E122E6B4D8003B4D7D /* ProductDataCollectionViewCell.swift */; };
 		844A98E422E6B4E3003B4D7D /* ImageCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A98E322E6B4E3003B4D7D /* ImageCellCollectionViewCell.swift */; };
+		8467A7E122E70610007E2E13 /* PreferentialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467A7E022E70610007E2E13 /* PreferentialCollectionViewCell.swift */; };
+		847D87BC22E6C4C40067D7FD /* BenefitsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D87BB22E6C4C40067D7FD /* BenefitsCollectionViewCell.swift */; };
 		84832FDA22E6A91700767522 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84832FD922E6A91700767522 /* AppDelegate.swift */; };
 		84832FDC22E6A91700767522 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84832FDB22E6A91700767522 /* ProductListViewController.swift */; };
 		84832FE122E6A91800767522 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84832FE022E6A91800767522 /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 		844A98DD22E6B4AF003B4D7D /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		844A98E122E6B4D8003B4D7D /* ProductDataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDataCollectionViewCell.swift; sourceTree = "<group>"; };
 		844A98E322E6B4E3003B4D7D /* ImageCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		8467A7E022E70610007E2E13 /* PreferentialCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferentialCollectionViewCell.swift; sourceTree = "<group>"; };
+		847D87BB22E6C4C40067D7FD /* BenefitsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitsCollectionViewCell.swift; sourceTree = "<group>"; };
 		84832FD622E6A91700767522 /* TikiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84832FD922E6A91700767522 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84832FDB22E6A91700767522 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 		844A98DC22E6B499003B4D7D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8467A7DF22E705E9007E2E13 /* Preferential */,
+				844A98E522E6B948003B4D7D /* Benefits */,
 				844A98DF22E6B4BC003B4D7D /* ProductData */,
 			);
 			path = View;
@@ -110,6 +116,22 @@
 				844A98E322E6B4E3003B4D7D /* ImageCellCollectionViewCell.swift */,
 			);
 			path = ImageCell;
+			sourceTree = "<group>";
+		};
+		844A98E522E6B948003B4D7D /* Benefits */ = {
+			isa = PBXGroup;
+			children = (
+				847D87BB22E6C4C40067D7FD /* BenefitsCollectionViewCell.swift */,
+			);
+			path = Benefits;
+			sourceTree = "<group>";
+		};
+		8467A7DF22E705E9007E2E13 /* Preferential */ = {
+			isa = PBXGroup;
+			children = (
+				8467A7E022E70610007E2E13 /* PreferentialCollectionViewCell.swift */,
+			);
+			path = Preferential;
 			sourceTree = "<group>";
 		};
 		84832FCD22E6A91700767522 = {
@@ -445,7 +467,9 @@
 				84832FFD22E6ABBE00767522 /* BaseUIViewController.swift in Sources */,
 				8483300622E6AC2E00767522 /* Dimension.swift in Sources */,
 				8483301222E6ACFE00767522 /* Reusable.swift in Sources */,
+				847D87BC22E6C4C40067D7FD /* BenefitsCollectionViewCell.swift in Sources */,
 				844A98DE22E6B4AF003B4D7D /* ProductDetailViewController.swift in Sources */,
+				8467A7E122E70610007E2E13 /* PreferentialCollectionViewCell.swift in Sources */,
 				8483301022E6ACC200767522 /* UINavigationBar+Extention.swift in Sources */,
 				8483300322E6AC1D00767522 /* Theme.swift in Sources */,
 				844A98E422E6B4E3003B4D7D /* ImageCellCollectionViewCell.swift in Sources */,
