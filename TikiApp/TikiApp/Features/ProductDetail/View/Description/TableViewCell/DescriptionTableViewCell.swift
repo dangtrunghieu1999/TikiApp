@@ -1,5 +1,5 @@
 //
-//  DataTableViewCell.swift
+//  DescriptionTableViewCell.swift
 //  TikiApp
 //
 //  Created by admin on 7/24/19.
@@ -8,15 +8,16 @@
 
 import UIKit
 
-class DataTableViewCell: UITableViewCell {
+class DescriptionTableViewCell: UITableViewCell {
+
     
-    public static let dataCell = "DataTableViewCell"
+    // MARK: - Variables
+    
+    public static let descriptionCellId = "DescriptionTableViewCell"
     
     // MARK: - UI Elements
-    
-    public var nameLabel: UILabel = {
+    public var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 0
         label.font = Dimension.shared.captionFont
         return label
     }()
@@ -25,14 +26,12 @@ class DataTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        layoutNameLabel()
-
+        layoutDescriptionLabel()
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        layoutNameLabel()
-
+        layoutDescriptionLabel()
     }
     
     static func caculteCellHeight(by description: String) -> CGFloat {
@@ -41,13 +40,13 @@ class DataTableViewCell: UITableViewCell {
         let desWidth = UIScreen.main.bounds.width - 20
         let desHeight = description.height(withConstrainedWidth: desWidth, font: UIFont.systemFont(ofSize: 13))
         
-        let estimateLableHeight = desHeight + Dimension.shared.mediumVerticalMargin
+        let estimateLableHeight = desHeight + Dimension.shared.smallVerticalMargin
         
         return estimateLableHeight
     }
     
     static func caculateTotalCellHeight(_ array: [String]) -> CGFloat {
-        var total: CGFloat = 57 + 20
+        var total: CGFloat = 10
         for item in array {
             total += caculteCellHeight(by: item)
         }
@@ -56,11 +55,11 @@ class DataTableViewCell: UITableViewCell {
     
     // MARK: - Layout
     
-    func layoutNameLabel() {
-        addSubview(nameLabel)
-        nameLabel.snp.makeConstraints { (make) in
+    func layoutDescriptionLabel() {
+        addSubview(descriptionLabel)
+        descriptionLabel.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
     }
-    
+
 }

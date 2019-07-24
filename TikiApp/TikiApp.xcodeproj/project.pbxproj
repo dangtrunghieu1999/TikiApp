@@ -28,6 +28,8 @@
 		8483300D22E6ACAA00767522 /* Array+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483300C22E6ACAA00767522 /* Array+Extention.swift */; };
 		8483301022E6ACC200767522 /* UINavigationBar+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483300F22E6ACC200767522 /* UINavigationBar+Extention.swift */; };
 		8483301222E6ACFE00767522 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483301122E6ACFE00767522 /* Reusable.swift */; };
+		8487719622E892EF00BACC48 /* DescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487719522E892EF00BACC48 /* DescriptionCollectionViewCell.swift */; };
+		8487719922E898AF00BACC48 /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487719822E898AF00BACC48 /* DescriptionTableViewCell.swift */; };
 		849D2ADD22E74DFF0038C254 /* CustomAttributed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D2ADC22E74DFF0038C254 /* CustomAttributed.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,8 @@
 		8483300C22E6ACAA00767522 /* Array+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extention.swift"; sourceTree = "<group>"; };
 		8483300F22E6ACC200767522 /* UINavigationBar+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extention.swift"; sourceTree = "<group>"; };
 		8483301122E6ACFE00767522 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		8487719522E892EF00BACC48 /* DescriptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCollectionViewCell.swift; sourceTree = "<group>"; };
+		8487719822E898AF00BACC48 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		849D2ADC22E74DFF0038C254 /* CustomAttributed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAttributed.swift; sourceTree = "<group>"; };
 		B9359C764BFB677C6CBA019B /* Pods-TikiApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikiApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TikiApp/Pods-TikiApp.release.xcconfig"; sourceTree = "<group>"; };
 		D187EFC1593B0011B7DCB5F4 /* Pods-TikiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikiApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TikiApp/Pods-TikiApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 		844A98DC22E6B499003B4D7D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8487719422E892D500BACC48 /* Description */,
 				8467A7DF22E705E9007E2E13 /* Preferential */,
 				844A98E522E6B948003B4D7D /* Benefits */,
 				844A98DF22E6B4BC003B4D7D /* ProductData */,
@@ -351,6 +356,23 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		8487719422E892D500BACC48 /* Description */ = {
+			isa = PBXGroup;
+			children = (
+				8487719722E8987C00BACC48 /* TableViewCell */,
+				8487719522E892EF00BACC48 /* DescriptionCollectionViewCell.swift */,
+			);
+			path = Description;
+			sourceTree = "<group>";
+		};
+		8487719722E8987C00BACC48 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8487719822E898AF00BACC48 /* DescriptionTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		A9425FC9B326272F7F43AFEB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8483300D22E6ACAA00767522 /* Array+Extention.swift in Sources */,
+				8487719622E892EF00BACC48 /* DescriptionCollectionViewCell.swift in Sources */,
 				84832FFB22E6ABA700767522 /* BarButtonItemModel.swift in Sources */,
 				84832FFD22E6ABBE00767522 /* BaseUIViewController.swift in Sources */,
 				8483300622E6AC2E00767522 /* Dimension.swift in Sources */,
@@ -497,6 +520,7 @@
 				844A98E222E6B4D8003B4D7D /* ProductDataCollectionViewCell.swift in Sources */,
 				84832FDA22E6A91700767522 /* AppDelegate.swift in Sources */,
 				840CD01522E84D2600603280 /* ImageItemCollectionViewCell.swift in Sources */,
+				8487719922E898AF00BACC48 /* DescriptionTableViewCell.swift in Sources */,
 				8483300922E6AC4700767522 /* Resource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

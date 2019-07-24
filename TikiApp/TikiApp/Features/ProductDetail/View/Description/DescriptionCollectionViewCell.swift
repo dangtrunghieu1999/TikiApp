@@ -1,19 +1,19 @@
 //
-//  PreferentialCollectionViewCell.swift
+//  DescriptionCollectionViewCell.swift
 //  TikiApp
 //
-//  Created by admin on 7/23/19.
+//  Created by admin on 7/24/19.
 //  Copyright © 2019 admin. All rights reserved.
 //
 
 import UIKit
 
-class PreferentialCollectionViewCell: UICollectionViewCell {
+class DescriptionCollectionViewCell: UICollectionViewCell {
     
-    public static let preferentalCellId = "PreferentialCollectionViewCell"
+    
+    public static let descriptionCellId = "DescriptionCollectionViewCell"
     
     // MARK: - UI Elements
-    
     
     private var lineView: UIView = {
         let view = UIView()
@@ -23,21 +23,22 @@ class PreferentialCollectionViewCell: UICollectionViewCell {
     
     private var nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Ưu Đãi Liên Quan"
+        label.text = "Mô Tả Sản Phẩm"
         label.font = Dimension.shared.titleFont
         return label
     }()
-   
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.delegate = self
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.separatorStyle = .none
-        tableView.register(DataTableViewCell.self, forCellReuseIdentifier: DataTableViewCell.dataCell)
+        tableView.register(DescriptionTableViewCell.self, forCellReuseIdentifier: DescriptionTableViewCell.descriptionCellId)
         return tableView
     }()
-   
     
+    
+
     // MARK: - View LifeCycle
     
     public override init(frame: CGRect) {
@@ -45,6 +46,7 @@ class PreferentialCollectionViewCell: UICollectionViewCell {
         layoutLineView()
         layoutNameLabel()
         layoutTableView()
+
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -55,8 +57,9 @@ class PreferentialCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
     }
+    
     // MARK: - Layout
-
+    
     func layoutLineView() {
         addSubview(lineView)
         lineView.snp.makeConstraints { (make) in
@@ -77,43 +80,37 @@ class PreferentialCollectionViewCell: UICollectionViewCell {
     func layoutTableView() {
         addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
-            make.top.equalTo(nameLabel.snp.bottom).offset(Dimension.shared.largeVerticalMargin)
+            make.top.equalTo(nameLabel.snp.bottom).offset(Dimension.shared.largeVerticalMargin_25)
             make.left.equalToSuperview().offset(Dimension.shared.mediumVerticalMargin)
             make.right.equalToSuperview().offset(-Dimension.shared.mediumVerticalMargin)
-            make.bottom.equalToSuperview()
+            make.height.equalTo(DescriptionTableViewCell.caculateTotalCellHeight(Resource.dataDescription))
         }
     }
 }
 
-// MARK: - UITableViewDelegate
-
-extension PreferentialCollectionViewCell: UITableViewDelegate {
+extension DescriptionCollectionViewCell: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return DataTableViewCell.caculteCellHeight(by: Resource.dataPreferential[indexPath.row])
+        return DescriptionTableViewCell.caculteCellHeight(by: Resource.dataDescription[indexPath.row])
     }
 }
 
-// MARK: - UITableViewDataSource
-extension PreferentialCollectionViewCell: UITableViewDataSource {
+extension DescriptionCollectionViewCell: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Resource.dataPreferential.count
+        return Resource.dataDescription.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: DataTableViewCell.dataCell, for: indexPath) as? DataTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionTableViewCell.descriptionCellId, for: indexPath) as? DescriptionTableViewCell else {
             return UITableViewCell()
         }
-        
-        cell.nameLabel.text = Resource.dataPreferential[indexPath.row]
-        cell.nameLabel.attributedText = CustomAttributed.lineSpacingText(Resource.dataPreferential[indexPath.row])
+        cell.descriptionLabel.text = Resource.dataDescription[indexPath.row]
         cell.selectionStyle = .none
         return cell
     }
+    
+    
 }
-
-

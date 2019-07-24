@@ -10,7 +10,7 @@ import UIKit
 
 public class CustomAttributed {
     
-    public static func lineSpacingText( _ text : String) -> NSMutableAttributedString {
+    public static func lineSpacingText( _ text: String) -> NSMutableAttributedString {
         let attributedString = NSMutableAttributedString(string: text)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 3
@@ -19,6 +19,15 @@ public class CustomAttributed {
                                       range:NSMakeRange(0, attributedString.length))
         return attributedString
     }
+    
+    public static func lineSpacingText( _ arrayText: [String]) -> NSMutableAttributedString {
+        var attributedString = NSMutableAttributedString()
+        for text in arrayText {
+            attributedString = lineSpacingText(text)
+        }
+        return attributedString
+    }
+    
     
     public static func attributeString(_ text: String) -> NSMutableAttributedString{
         let customFont = [ NSAttributedString.Key.font: Dimension.shared.captionFont ]

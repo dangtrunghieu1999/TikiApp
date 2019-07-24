@@ -47,5 +47,30 @@ public class Resource {
                                       Resource.bonusLabel,
                                       Resource.address
                                       ]
+    
+    
+    public static var usb = "USB interface: Yes"
+    public static var mounting = "Wall Mounting Speccifications: 100x100mm"
+    public static var function = "HDCP function: support"
+    public static var DVI = "DVI: 1"
+    public static var base = "Lift"
+    public static var ratio = "Screen ratio: 16:9"
+    public static var time = "Response time: 4ms"
+    public static var range = "Response range: &lt;5ms"
+    public static var contrast = "Contrast: 1000:1"
+    public static var speaker = "Built-in speaker:..."
+    
+    
+    public static var dataDescription: [String] = [Resource.usb,
+                                                   Resource.mounting,
+                                                   Resource.function,
+                                                   Resource.DVI,
+                                                   Resource.base,
+                                                   Resource.ratio,
+                                                   Resource.time,
+                                                   Resource.range,
+                                                   Resource.contrast,
+                                                   Resource.speaker
+    ]
 }
 

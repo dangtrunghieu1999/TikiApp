@@ -16,11 +16,11 @@ class ProductDetailViewController: BaseUIViewController {
         case infomation   = 0
         case benefits     = 1
         case preferential = 2
-        case detail       = 3
-        case description  = 4
+        case description  = 3
+        case recoment     = 4
         
         static func numberSection() -> Int {
-            return 3
+            return 4
         }
     }
     
@@ -61,6 +61,7 @@ class ProductDetailViewController: BaseUIViewController {
         collectionView.register(ProductDataCollectionViewCell.self, forCellWithReuseIdentifier: ProductDataCollectionViewCell.productDetailId)
         collectionView.register(BenefitsCollectionViewCell.self, forCellWithReuseIdentifier: BenefitsCollectionViewCell.benefitCellId)
         collectionView.register(PreferentialCollectionViewCell.self, forCellWithReuseIdentifier: PreferentialCollectionViewCell.preferentalCellId)
+        collectionView.register(DescriptionCollectionViewCell.self, forCellWithReuseIdentifier: DescriptionCollectionViewCell.descriptionCellId)
     }
     
     // MARK: - Layout
@@ -94,14 +95,25 @@ extension ProductDetailViewController: UICollectionViewDataSource {
         
         switch SectionType(rawValue: indexPath.section) {
         case .infomation?:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductDataCollectionViewCell.productDetailId , for: indexPath) as! ProductDataCollectionViewCell
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductDataCollectionViewCell.productDetailId , for: indexPath) as? ProductDataCollectionViewCell else {
+                return UICollectionViewCell()
+            }
             return cell
             
         case .benefits?:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BenefitsCollectionViewCell.benefitCellId, for: indexPath) as! BenefitsCollectionViewCell
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BenefitsCollectionViewCell.benefitCellId, for: indexPath) as? BenefitsCollectionViewCell else {
+                 return UICollectionViewCell()
+            }
+            return cell
+        case .preferential?:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PreferentialCollectionViewCell.preferentalCellId, for: indexPath) as? PreferentialCollectionViewCell else {
+                return UICollectionViewCell()
+            }
             return cell
         default:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PreferentialCollectionViewCell.preferentalCellId, for: indexPath) as! PreferentialCollectionViewCell
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DescriptionCollectionViewCell.descriptionCellId, for: indexPath) as? DescriptionCollectionViewCell else {
+                return UICollectionViewCell()
+            }
             return cell
         }
     }
@@ -115,13 +127,16 @@ extension ProductDetailViewController: UICollectionViewDelegateFlowLayout {
         let width  = UIScreen.main.bounds.width
         let heigth = width + 280
         
+        let heightPreferental = DataTableViewCell.caculateTotalCellHeight(Resource.dataPreferential)
         switch SectionType(rawValue: indexPath.section) {
         case .infomation?:
             return CGSize(width: width, height: heigth)
         case .benefits?:
             return CGSize(width: width, height: 130)
+        case .preferential?:
+            return CGSize(width: width, height: heightPreferental)
         default:
-            return CGSize(width: width, height: 1000)
+            return CGSize(width: width, height: 800)
         }
         
     }
