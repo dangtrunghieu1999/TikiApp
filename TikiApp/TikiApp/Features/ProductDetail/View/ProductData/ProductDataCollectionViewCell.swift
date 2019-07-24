@@ -30,13 +30,7 @@ class ProductDataCollectionViewCell: UICollectionViewCell {
     
     private var nameLabel: UILabel = {
         let label = UILabel()
-        let attributedString = NSMutableAttributedString(string: Resource.ItemProduct.nameLabel)
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 5
-        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle,
-                                      value: paragraphStyle,
-                                      range:NSMakeRange(0, attributedString.length))
-        label.attributedText = attributedString
+        label.attributedText = CustomAttributed.lineSpacingText(Resource.ItemProduct.nameLabel)
         label.numberOfLines = 0
         label.font = Dimension.shared.titleFont
         label.textAlignment = .left
@@ -60,15 +54,10 @@ class ProductDataCollectionViewCell: UICollectionViewCell {
     
     private var provideLabel: UILabel = {
         let label = UILabel()
-        let provideAttribute = [ NSAttributedString.Key.font: Dimension.shared.captionFont ]
-        let provideString = NSMutableAttributedString(string: Resource.ItemProduct.provideLabel, attributes: provideAttribute )
-        
-        let nameProdiveAttribute = [ NSAttributedString.Key.font: Dimension.shared.captionFontSemiBold ]
-        let nameProdiveString = NSMutableAttributedString(string: Resource.ItemProduct.nameProvideLabel,attributes: nameProdiveAttribute)
-        
-        provideString.append(nameProdiveString)
+        let provideString = CustomAttributed.attributeString(Resource.ItemProduct.provideLabel)
+        let nameProvideString = CustomAttributed.attributeStringSemiBold(Resource.ItemProduct.nameProvideLabel)
+        provideString.append(nameProvideString)
         label.attributedText = provideString
-        
         return label
     }()
     

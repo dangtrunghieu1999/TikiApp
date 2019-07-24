@@ -93,7 +93,7 @@ class BenefitsCollectionViewCell: UICollectionViewCell {
     func layoutCommitLabel() {
         addSubview(commitLabel)
         commitLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(refundMoneyLabel.snp.bottom).offset(Dimension.shared.largeVerticalMargin_25)
+            make.top.equalTo(refundMoneyLabel.snp.bottom).offset(Dimension.shared.largeVerticalMargin)
             make.left.equalTo(nameLabel.snp.left)
         }
     }

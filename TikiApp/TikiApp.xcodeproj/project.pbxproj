@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1A2CE6E4633F3B64E196B735 /* Pods_TikiApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F2D7F192EF2199AB7BE6C6 /* Pods_TikiApp.framework */; };
+		840CD01522E84D2600603280 /* ImageItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CD01422E84D2600603280 /* ImageItemCollectionViewCell.swift */; };
+		840CD01722E84ECB00603280 /* String+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CD01622E84ECB00603280 /* String+Extention.swift */; };
 		844A98DE22E6B4AF003B4D7D /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A98DD22E6B4AF003B4D7D /* ProductDetailViewController.swift */; };
 		844A98E222E6B4D8003B4D7D /* ProductDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A98E122E6B4D8003B4D7D /* ProductDataCollectionViewCell.swift */; };
 		844A98E422E6B4E3003B4D7D /* ImageCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A98E322E6B4E3003B4D7D /* ImageCellCollectionViewCell.swift */; };
@@ -25,11 +27,13 @@
 		8483300D22E6ACAA00767522 /* Array+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483300C22E6ACAA00767522 /* Array+Extention.swift */; };
 		8483301022E6ACC200767522 /* UINavigationBar+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483300F22E6ACC200767522 /* UINavigationBar+Extention.swift */; };
 		8483301222E6ACFE00767522 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483301122E6ACFE00767522 /* Reusable.swift */; };
-		8483301722E6AF0500767522 /* ImageItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483301622E6AF0500767522 /* ImageItemCollectionViewCell.swift */; };
+		849D2ADD22E74DFF0038C254 /* CustomAttributed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D2ADC22E74DFF0038C254 /* CustomAttributed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		35F2D7F192EF2199AB7BE6C6 /* Pods_TikiApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TikiApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		840CD01422E84D2600603280 /* ImageItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		840CD01622E84ECB00603280 /* String+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extention.swift"; sourceTree = "<group>"; };
 		844A98DD22E6B4AF003B4D7D /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		844A98E122E6B4D8003B4D7D /* ProductDataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDataCollectionViewCell.swift; sourceTree = "<group>"; };
 		844A98E322E6B4E3003B4D7D /* ImageCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -49,7 +53,7 @@
 		8483300C22E6ACAA00767522 /* Array+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extention.swift"; sourceTree = "<group>"; };
 		8483300F22E6ACC200767522 /* UINavigationBar+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extention.swift"; sourceTree = "<group>"; };
 		8483301122E6ACFE00767522 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
-		8483301622E6AF0500767522 /* ImageItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageItemCollectionViewCell.swift; path = ../../../../../../../../../Documents/ImageItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		849D2ADC22E74DFF0038C254 /* CustomAttributed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAttributed.swift; sourceTree = "<group>"; };
 		B9359C764BFB677C6CBA019B /* Pods-TikiApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikiApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TikiApp/Pods-TikiApp.release.xcconfig"; sourceTree = "<group>"; };
 		D187EFC1593B0011B7DCB5F4 /* Pods-TikiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikiApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TikiApp/Pods-TikiApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -281,6 +285,7 @@
 				8483300222E6AC1D00767522 /* Theme.swift */,
 				8483300522E6AC2E00767522 /* Dimension.swift */,
 				8483300822E6AC4700767522 /* Resource.swift */,
+				849D2ADC22E74DFF0038C254 /* CustomAttributed.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 			children = (
 				8483300C22E6ACAA00767522 /* Array+Extention.swift */,
 				8483300F22E6ACC200767522 /* UINavigationBar+Extention.swift */,
+				840CD01622E84ECB00603280 /* String+Extention.swift */,
 			);
 			path = UIkit;
 			sourceTree = "<group>";
@@ -329,7 +335,7 @@
 		8483301522E6AEE000767522 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				8483301622E6AF0500767522 /* ImageItemCollectionViewCell.swift */,
+				840CD01422E84D2600603280 /* ImageItemCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -470,14 +476,16 @@
 				847D87BC22E6C4C40067D7FD /* BenefitsCollectionViewCell.swift in Sources */,
 				844A98DE22E6B4AF003B4D7D /* ProductDetailViewController.swift in Sources */,
 				8467A7E122E70610007E2E13 /* PreferentialCollectionViewCell.swift in Sources */,
+				849D2ADD22E74DFF0038C254 /* CustomAttributed.swift in Sources */,
 				8483301022E6ACC200767522 /* UINavigationBar+Extention.swift in Sources */,
 				8483300322E6AC1D00767522 /* Theme.swift in Sources */,
 				844A98E422E6B4E3003B4D7D /* ImageCellCollectionViewCell.swift in Sources */,
 				84832FDC22E6A91700767522 /* ProductListViewController.swift in Sources */,
+				840CD01722E84ECB00603280 /* String+Extention.swift in Sources */,
 				844A98E222E6B4D8003B4D7D /* ProductDataCollectionViewCell.swift in Sources */,
 				84832FDA22E6A91700767522 /* AppDelegate.swift in Sources */,
+				840CD01522E84D2600603280 /* ImageItemCollectionViewCell.swift in Sources */,
 				8483300922E6AC4700767522 /* Resource.swift in Sources */,
-				8483301722E6AF0500767522 /* ImageItemCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

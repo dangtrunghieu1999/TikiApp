@@ -22,21 +22,6 @@ class ProductDetailViewController: BaseUIViewController {
         static func numberSection() -> Int {
             return 3
         }
-        
-        init(indexPath: IndexPath){
-            switch indexPath.section {
-            case 0:
-                self = .infomation
-            case 1:
-                self = .benefits
-            case 2:
-                self = .preferential
-            case 3:
-                self = .detail
-            default:
-                self = .description
-            }
-        }
     }
     
     // MARK: - UI Elements
@@ -107,12 +92,12 @@ extension ProductDetailViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        switch SectionType.init(indexPath: indexPath) {
-        case .infomation:
+        switch SectionType(rawValue: indexPath.section) {
+        case .infomation?:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductDataCollectionViewCell.productDetailId , for: indexPath) as! ProductDataCollectionViewCell
             return cell
             
-        case .benefits:
+        case .benefits?:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BenefitsCollectionViewCell.benefitCellId, for: indexPath) as! BenefitsCollectionViewCell
             return cell
         default:
@@ -128,15 +113,15 @@ extension ProductDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width  = UIScreen.main.bounds.width
-        let heigth = UIScreen.main.bounds.height - 50
+        let heigth = width + 280
         
-        switch SectionType.init(indexPath: indexPath) {
-        case .infomation:
+        switch SectionType(rawValue: indexPath.section) {
+        case .infomation?:
             return CGSize(width: width, height: heigth)
-        case .benefits:
-            return CGSize(width: width, height: 150)
+        case .benefits?:
+            return CGSize(width: width, height: 130)
         default:
-            return CGSize(width: width, height: 150)
+            return CGSize(width: width, height: 450)
         }
         
     }
