@@ -38,7 +38,7 @@ public class Resource {
     public static var address = "Bạn ơi hãy chọn địa chỉ nhận hàng để được dự báo thời gian giao hàng một cách chính xác"
     
     
-    var dataPreferential: [String] = [Resource.hotlineLabel,
+    public static var dataPreferential: [String] = [Resource.hotlineLabel,
                                       Resource.refundLabel,
                                       Resource.saleLabel,
                                       Resource.promotionLabel,

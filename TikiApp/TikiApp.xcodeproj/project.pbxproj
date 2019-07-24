@@ -10,6 +10,7 @@
 		1A2CE6E4633F3B64E196B735 /* Pods_TikiApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F2D7F192EF2199AB7BE6C6 /* Pods_TikiApp.framework */; };
 		840CD01522E84D2600603280 /* ImageItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CD01422E84D2600603280 /* ImageItemCollectionViewCell.swift */; };
 		840CD01722E84ECB00603280 /* String+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CD01622E84ECB00603280 /* String+Extention.swift */; };
+		840CD01A22E8540300603280 /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CD01922E8540300603280 /* DataTableViewCell.swift */; };
 		844A98DE22E6B4AF003B4D7D /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A98DD22E6B4AF003B4D7D /* ProductDetailViewController.swift */; };
 		844A98E222E6B4D8003B4D7D /* ProductDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A98E122E6B4D8003B4D7D /* ProductDataCollectionViewCell.swift */; };
 		844A98E422E6B4E3003B4D7D /* ImageCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A98E322E6B4E3003B4D7D /* ImageCellCollectionViewCell.swift */; };
@@ -34,6 +35,7 @@
 		35F2D7F192EF2199AB7BE6C6 /* Pods_TikiApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TikiApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		840CD01422E84D2600603280 /* ImageItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		840CD01622E84ECB00603280 /* String+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extention.swift"; sourceTree = "<group>"; };
+		840CD01922E8540300603280 /* DataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
 		844A98DD22E6B4AF003B4D7D /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		844A98E122E6B4D8003B4D7D /* ProductDataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDataCollectionViewCell.swift; sourceTree = "<group>"; };
 		844A98E322E6B4E3003B4D7D /* ImageCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 				35F2D7F192EF2199AB7BE6C6 /* Pods_TikiApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		840CD01822E853E200603280 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				840CD01922E8540300603280 /* DataTableViewCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		844A98DA22E6B485003B4D7D /* ProductDetail */ = {
@@ -133,6 +143,7 @@
 		8467A7DF22E705E9007E2E13 /* Preferential */ = {
 			isa = PBXGroup;
 			children = (
+				840CD01822E853E200603280 /* TableViewCell */,
 				8467A7E022E70610007E2E13 /* PreferentialCollectionViewCell.swift */,
 			);
 			path = Preferential;
@@ -474,6 +485,7 @@
 				8483300622E6AC2E00767522 /* Dimension.swift in Sources */,
 				8483301222E6ACFE00767522 /* Reusable.swift in Sources */,
 				847D87BC22E6C4C40067D7FD /* BenefitsCollectionViewCell.swift in Sources */,
+				840CD01A22E8540300603280 /* DataTableViewCell.swift in Sources */,
 				844A98DE22E6B4AF003B4D7D /* ProductDetailViewController.swift in Sources */,
 				8467A7E122E70610007E2E13 /* PreferentialCollectionViewCell.swift in Sources */,
 				849D2ADD22E74DFF0038C254 /* CustomAttributed.swift in Sources */,

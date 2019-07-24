@@ -121,7 +121,7 @@ extension ProductDetailViewController: UICollectionViewDelegateFlowLayout {
         case .benefits?:
             return CGSize(width: width, height: 130)
         default:
-            return CGSize(width: width, height: 450)
+            return CGSize(width: width, height: 1000)
         }
         
     }

@@ -14,6 +14,7 @@ class PreferentialCollectionViewCell: UICollectionViewCell {
     
     // MARK: - UI Elements
     
+    
     private var lineView: UIView = {
         let view = UIView()
         view.backgroundColor = Theme.shared.lineViewColor
@@ -26,68 +27,16 @@ class PreferentialCollectionViewCell: UICollectionViewCell {
         label.font = Dimension.shared.titleFont
         return label
     }()
-    
-    private var hotlineLabel: UILabel = {
-        let label = UILabel()
-        label.text = "HOTLINE: 1900 6035 (1.000đ/phút, 8-21h cả T7,CN)"
-        label.font = Dimension.shared.captionFont
-        label.numberOfLines = 0
-        return label
+   
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.register(DataTableViewCell.self, forCellReuseIdentifier: DataTableViewCell.dataCell)
+        return tableView
     }()
-    
-    private var refundLabel: UILabel = {
-        let label = UILabel()
-        let text = "Hoàn tiền cho thành viên TikiNOW (tối đa 100k/tháng) 1%(999 đ) Chi tiết"
-        label.attributedText = CustomAttributed.lineSpacingText(text)
-        label.font = Dimension.shared.captionFont
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    private var promotionCodeLabel: UILabel = {
-        let label = UILabel()
-        let text = "Nhập mã MOMOBH giảm 50k cho đơn hàng Làm Đẹp Sức Khoẻ từ 300k khi thanh toán qua Ví MoMo. Mỗi khách hàng sử dụng một lần. Số lượng có hạn. "
-        label.attributedText = CustomAttributed.lineSpacingText(text)
-        label.font = Dimension.shared.captionFont
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    private var promotionLimitLabel: UILabel = {
-        let label = UILabel()
-        let text = "Tiki gửi đến khách hàng mới coupon TIKINEW07 - Giảm 20.000VNĐ cho đơn hàng từ 200.000VNĐ. Chỉ áp dụng cho đơn hàng đầu tiên tại App TIKI. Số lượng có hạn"
-        label.attributedText = CustomAttributed.lineSpacingText(text)
-        label.font = Dimension.shared.captionFont
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    private var voucherLabel: UILabel = {
-        let label = UILabel()
-        let text = "Tiki gửi đến khách hàng mới coupon TIKINEW07 - Giảm 20.000VNĐ cho đơn hàng từ 200.000VNĐ. Chỉ áp dụng cho đơn hàng đầu tiên tại App TIKI. Số lượng có hạn"
-        label.attributedText = CustomAttributed.lineSpacingText(text)
-        label.font = Dimension.shared.captionFont
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    private var freeShipLabel: UILabel = {
-        let label = UILabel()
-        let text = "Tiki gửi đến khách hàng mới coupon TIKINEW07 - Giảm 20.000VNĐ cho đơn hàng từ 200.000VNĐ. Chỉ áp dụng cho đơn hàng đầu tiên tại App TIKI. Số lượng có hạn"
-        label.attributedText = CustomAttributed.lineSpacingText(text)
-        label.font = Dimension.shared.captionFont
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    private var bonusPromotion: UILabel = {
-        let label = UILabel()
-        let text = "Tiki gửi đến khách hàng mới coupon TIKINEW07 - Giảm 20.000VNĐ cho đơn hàng từ 200.000VNĐ. Chỉ áp dụng cho đơn hàng đầu tiên tại App TIKI. Số lượng có hạn"
-        label.attributedText = CustomAttributed.lineSpacingText(text)
-        label.font = Dimension.shared.captionFont
-        label.numberOfLines = 0
-        return label
-    }()
+   
     
     // MARK: - View LifeCycle
     
@@ -95,13 +44,7 @@ class PreferentialCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         layoutLineView()
         layoutNameLabel()
-        layoutHolineLabel()
-        layoutRefundLabel()
-        layoutPromotionCodeLabel()
-        layoutPromotionLimitLabel()
-        layoutVoucherLabel()
-        layoutFreeShipLabel()
-        layoutBonusPromotionLabel()
+        layoutTableView()
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -113,7 +56,9 @@ class PreferentialCollectionViewCell: UICollectionViewCell {
         
     }
     
+    
     // MARK: - Layout
+    
     
     func layoutLineView() {
         addSubview(lineView)
@@ -132,67 +77,45 @@ class PreferentialCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func layoutHolineLabel() {
-        addSubview(hotlineLabel)
-        hotlineLabel.snp.makeConstraints { (make) in
+    func layoutTableView() {
+        addSubview(tableView)
+        tableView.snp.makeConstraints { (make) in
             make.top.equalTo(nameLabel.snp.bottom).offset(Dimension.shared.largeVerticalMargin)
-            make.left.equalTo(nameLabel.snp.left)
-            make.right.equalToSuperview().offset(-Dimension.shared.mediumHorizontalMargin)
+            make.left.equalToSuperview().offset(Dimension.shared.mediumVerticalMargin)
+            make.right.equalToSuperview().offset(-Dimension.shared.mediumVerticalMargin)
+            make.bottom.equalToSuperview()
         }
     }
-    
-    func layoutRefundLabel() {
-        addSubview(refundLabel)
-        refundLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(hotlineLabel.snp.bottom).offset(Dimension.shared.mediumVerticalMargin)
-            make.left.equalTo(nameLabel.snp.left)
-            make.right.equalToSuperview().offset(-Dimension.shared.mediumHorizontalMargin)
-        }
-    }
-    
-    func layoutPromotionCodeLabel() {
-        addSubview(promotionCodeLabel)
-        promotionCodeLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(refundLabel.snp.bottom).offset(Dimension.shared.mediumVerticalMargin)
-            make.left.equalTo(nameLabel.snp.left)
-            make.right.equalToSuperview().offset(-Dimension.shared.mediumHorizontalMargin)
-        }
-    }
-    
-    func layoutPromotionLimitLabel(){
-        addSubview(promotionLimitLabel)
-        promotionLimitLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(promotionCodeLabel.snp.bottom).offset(Dimension.shared.mediumVerticalMargin)
-            make.left.equalTo(nameLabel.snp.left)
-            make.right.equalToSuperview().offset(-Dimension.shared.mediumHorizontalMargin)
-        }
-    }
-
-    func layoutVoucherLabel(){
-        addSubview(voucherLabel)
-        voucherLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(promotionLimitLabel.snp.bottom).offset(Dimension.shared.mediumVerticalMargin)
-            make.left.equalTo(nameLabel.snp.left)
-            make.right.equalToSuperview().offset(-Dimension.shared.mediumHorizontalMargin)
-        }
-    }
-    
-    func layoutFreeShipLabel() {
-        addSubview(freeShipLabel)
-        freeShipLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(voucherLabel.snp.bottom).offset(Dimension.shared.mediumVerticalMargin)
-            make.left.equalTo(nameLabel.snp.left)
-            make.right.equalToSuperview().offset(-Dimension.shared.mediumHorizontalMargin)
-        }
-    }
-    
-    func layoutBonusPromotionLabel() {
-        addSubview(bonusPromotion)
-        bonusPromotion.snp.makeConstraints { (make) in
-            make.top.equalTo(freeShipLabel.snp.bottom).offset(Dimension.shared.mediumVerticalMargin)
-            make.left.equalTo(nameLabel.snp.left)
-            make.right.equalToSuperview().offset(-Dimension.shared.mediumHorizontalMargin)
-        }
-    }
-    
 }
+
+// MARK: - UITableViewDelegate
+
+extension PreferentialCollectionViewCell: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return DataTableViewCell.caculteCellHeight(by: Resource.dataPreferential[indexPath.row])
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension PreferentialCollectionViewCell: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Resource.dataPreferential.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: DataTableViewCell.dataCell, for: indexPath) as? DataTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        cell.nameLabel.text = Resource.dataPreferential[indexPath.row]
+        cell.selectionStyle = .none
+        return cell
+    }
+}
+
+
