@@ -20,7 +20,7 @@ class ProductDetailViewController: BaseUIViewController {
         case recoment     = 4
         
         static func numberSection() -> Int {
-            return 4
+            return 5
         }
     }
     
@@ -31,7 +31,7 @@ class ProductDetailViewController: BaseUIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = .white
         return collectionView
     }()
     
@@ -62,6 +62,7 @@ class ProductDetailViewController: BaseUIViewController {
         collectionView.register(BenefitsCollectionViewCell.self, forCellWithReuseIdentifier: BenefitsCollectionViewCell.benefitCellId)
         collectionView.register(PreferentialCollectionViewCell.self, forCellWithReuseIdentifier: PreferentialCollectionViewCell.preferentalCellId)
         collectionView.register(DescriptionCollectionViewCell.self, forCellWithReuseIdentifier: DescriptionCollectionViewCell.descriptionCellId)
+        collectionView.register(RecommentCollectionViewCell.self, forCellWithReuseIdentifier: RecommentCollectionViewCell.recommentCellId)
     }
     
     // MARK: - Layout
@@ -110,8 +111,13 @@ extension ProductDetailViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             return cell
-        default:
+        case .description?:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DescriptionCollectionViewCell.descriptionCellId, for: indexPath) as? DescriptionCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            return cell
+        default :
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommentCollectionViewCell.recommentCellId, for: indexPath) as? RecommentCollectionViewCell else {
                 return UICollectionViewCell()
             }
             return cell
@@ -128,6 +134,7 @@ extension ProductDetailViewController: UICollectionViewDelegateFlowLayout {
         let heigth = width + 280
         
         let heightPreferental = DataTableViewCell.caculateTotalCellHeight(Resource.dataPreferential)
+        let heightDescription = DescriptionTableViewCell.caculateTotalCellHeight(Resource.dataDescription) + 260
         switch SectionType(rawValue: indexPath.section) {
         case .infomation?:
             return CGSize(width: width, height: heigth)
@@ -135,8 +142,10 @@ extension ProductDetailViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: width, height: 130)
         case .preferential?:
             return CGSize(width: width, height: heightPreferental)
+        case .description?:
+            return CGSize(width: width, height: heightDescription)
         default:
-            return CGSize(width: width, height: 800)
+            return CGSize(width: width, height: 300)
         }
         
     }

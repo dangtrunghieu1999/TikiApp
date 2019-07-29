@@ -15,6 +15,9 @@ public class Resource {
         public static var cartButton:  UIImage? = UIImage(named: "Cart")
         public static var closeButton: UIImage? = UIImage(named: "Close")
         public static var imageTemp:   UIImage? = UIImage(named: "photo1")
+        public static var imagePhoto:    UIImage? = UIImage(named: "photo3")
+        public static var imageIPhone:   UIImage? = UIImage(named: "photo4")
+        public static var imageGradient:    UIImage? = UIImage(named: "Gradient")
         
     }
     public class ItemProduct {

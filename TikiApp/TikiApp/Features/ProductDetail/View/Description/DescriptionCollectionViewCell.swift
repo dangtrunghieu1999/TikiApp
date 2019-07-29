@@ -37,8 +37,33 @@ class DescriptionCollectionViewCell: UICollectionViewCell {
         return tableView
     }()
     
+    private var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.image = Resource.Image.imagePhoto
+        return imageView
+    }()
     
-
+    private var gradientImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleToFill
+        imageView.image = Resource.Image.imageGradient
+        return imageView
+    }()
+    
+    private var addButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .clear
+        button.setTitle("Xem chi tiết", for: .normal)
+        button.titleLabel?.font = Dimension.shared.captionFont
+        button.setTitleColor(.blue, for: .normal)
+        return button
+    }()
+    
+    
+    
     // MARK: - View LifeCycle
     
     public override init(frame: CGRect) {
@@ -46,7 +71,10 @@ class DescriptionCollectionViewCell: UICollectionViewCell {
         layoutLineView()
         layoutNameLabel()
         layoutTableView()
-
+        layoutImageView()
+        layoutGradientImageView()
+        layoutAddButton()
+        
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -81,9 +109,37 @@ class DescriptionCollectionViewCell: UICollectionViewCell {
         addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.top.equalTo(nameLabel.snp.bottom).offset(Dimension.shared.largeVerticalMargin_25)
-            make.left.equalToSuperview().offset(Dimension.shared.mediumVerticalMargin)
-            make.right.equalToSuperview().offset(-Dimension.shared.mediumVerticalMargin)
+            make.left.equalToSuperview().offset(Dimension.shared.mediumHorizontalMargin)
+            make.right.equalToSuperview().offset(-Dimension.shared.mediumHorizontalMargin)
             make.height.equalTo(DescriptionTableViewCell.caculateTotalCellHeight(Resource.dataDescription))
+        }
+    }
+    
+    func layoutImageView() {
+        addSubview(imageView)
+        imageView.snp.makeConstraints { (make) in
+            make.top.equalTo(tableView.snp.bottom).offset(30)
+            make.left.equalToSuperview().offset(Dimension.shared.mediumHorizontalMargin)
+            make.right.equalToSuperview().offset(-Dimension.shared.mediumHorizontalMargin)
+            make.bottom.equalToSuperview()
+        }
+    }
+    
+    func layoutGradientImageView() {
+        addSubview(gradientImageView)
+        gradientImageView.snp.makeConstraints { (make) in
+            make.top.equalTo(tableView.snp.bottom).offset(30)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+    }
+    
+    func layoutAddButton() {
+        addSubview(addButton)
+        addButton.snp.makeConstraints { (make) in
+            make.bottom.equalToSuperview()
+            make.centerX.equalToSuperview()
         }
     }
 }

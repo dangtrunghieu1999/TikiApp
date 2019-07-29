@@ -71,8 +71,8 @@ class ImageItemCollectionViewCell: UICollectionViewCell {
             make.height.equalTo(height)
         }
     }
+    
     func layoutNameLabel(){
-        
         addSubview(nameLabel)
         nameLabel.snp.makeConstraints { (make) in
             make.top.equalTo(imageView.snp.bottom).offset(Dimension.shared.largeVerticalMargin)
